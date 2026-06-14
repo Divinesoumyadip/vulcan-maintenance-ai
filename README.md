@@ -27,11 +27,38 @@ Its defining property is **epistemic honesty**. VULCAN never invents a part numb
 
 ---
 
+## 4. Key features
+
+VULCAN is a real agentic system, not a chatbot. The LLM plans which tools each query needs, calls them, reads the real results, and synthesizes a traceable answer.
+<img width="1280" height="565" alt="image" src="https://github.com/user-attachments/assets/aee53707-daef-433b-8dfb-43d309b30f78" />
+
+Four layer anomaly detection combining threshold, z score, CUSUM drift and trend rate catches slow degradation early, before any hard limit is crossed.
+
+Four remaining useful life models, linear regression with an eighty percent confidence interval, Weibull conditional life, Arrhenius thermal aging and the P to F interval, forecast failure ahead of time.
+<img width="1280" height="564" alt="image" src="https://github.com/user-attachments/assets/38ddf23a-e191-4d8b-8297-ea1d6799819e" />
+
+Hybrid knowledge retrieval over manuals, SOPs and failure history, fusing TF-IDF and BM25, with chunk level source citations on every claim.
+
+Constraint aware prioritization that fuses process criticality, delay severity, spares availability and procurement lead time into one transparent risk score, flagging when remaining life is shorter than the part lead time.
+
+Epistemic honesty as the core principle. VULCAN never invents a part number, threshold, stock level or reading. Missing data is named as an information gap with a plan to acquire it.
+<img width="1280" height="626" alt="image" src="https://github.com/user-attachments/assets/aedb7c71-a22e-4247-ae91-1faefb19aeef" />
+
+Autonomous sentinel that monitors the whole plant unattended, predicting failures before any limit breaks, routing role specific alerts, and raising spares checked work orders on its own.
+
+Production minded engineering: SQLite write ahead log ledger, HMAC signed webhooks, a health endpoint, structured logging with key redaction, Docker packaging and continuous <img width="1280" height="539" alt="image" src="https://github.com/user-attachments/assets/3eb3dfd1-2f18-4919-abc9-9d5a0924e888" />
+integration.
+
+Measured quality: 51 of 51 evaluation checks and 43 unit tests, all runnable offline in about 60 seconds.
+
+---
+
 ## 2. Working principle
 
 VULCAN reasons in one traceable pass, the way a careful engineer would.
 
 It first **detects**, running a four layer anomaly engine that combines a threshold check, a statistical z score, a CUSUM drift test and a trend rate, so slow degradation is caught long before a hard limit is crossed. It then **predicts**, estimating remaining useful life with a linear regression model that reports an eighty percent confidence interval and a fit quality score, backed by three more estimators for Weibull conditional life, Arrhenius thermal aging and the P to F interval. It then **diagnoses**, retrieving the relevant manual, SOP and past failure history and reasoning to the most probable root cause while ruling out alternatives. It then **prioritizes**, fusing process criticality, delay severity, spares availability and procurement lead time into one transparent risk score where every sub factor shows its raw value and source. Finally it **recommends** a concrete plan and flags the dangerous case where remaining life is shorter than the part lead time.
+<img width="3111" height="2000" alt="image" src="https://github.com/user-attachments/assets/f18a1d02-7bce-4248-8427-e386e3398ff5" />
 
 Crucially, VULCAN does not wait to be asked. An autonomous sentinel runs continuously in the background, monitoring the whole plant with every browser tab closed. It detects problems on its own, predicts failures from the remaining useful life trend before any limit is breached, routes role specific notifications to the right people, and raises spares checked work orders automatically on critical conditions. This turns maintenance from firefighting after a breakdown into planning before it.
 
@@ -93,14 +120,21 @@ pytest tests/                 # 43 unit tests
 ```
 
 The app has six tabs: **Chat** (the agent, with a live tool trace), **Dashboard** (fleet health scores and trend charts), **Alerts** (autonomously generated reactive and predictive alerts), **Work Orders** (the auto raised and agent raised action ledger), **Live Monitor** (a simulated sensor feed you can step through), and **Logbook** (a persistent maintenance log). A status strip at the top shows the autonomous sentinel running.
+<img width="1280" height="151" alt="image" src="https://github.com/user-attachments/assets/cb3027e2-6990-4e89-b8e2-313582648b26" />
 
 ---
+
+
+
 
 ## 6. Demo data
 
 All bundled data is synthetic and labeled as such. The seeded scenario is a caster mold oscillator, **CC2-MO-01**, with accelerating vibration (2.8 rising to about 7.4 mm/s over twelve days) against OEM limits of 7.0 warning and 11.0 trip, a maintenance history containing an analogous confirmed bearing failure, one bearing in stock, and a delay log where **HSM-COILER-01** is the chronic plant bottleneck.
 
 To use real plant data, drop real files into the same slots under `data/` and restart. No code changes are needed.
+
+<img width="1280" height="565" alt="image" src="https://github.com/user-attachments/assets/5f36c844-5708-4a7c-a120-c728423c0be1" />
+
 
 ---
 
