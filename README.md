@@ -3,20 +3,33 @@
 **Tata Steel AI Hackathon 2026 · Round 2 — Agentic AI Challenge**
 Problem: *Maintenance Wizard for Industrial Equipment (Steel Manufacturing)*
 
-VULCAN is a decision-support agent for maintenance engineers. An LLM
-orchestrator (governed by an 812-line behavioral system prompt, v7.0) plans
-which of its **genuine tools** to call per query — RAG retrieval over
+> **▶ Live demo:** https://vulcan-maintenance-ai-zzn57vptdg6gd8hbaf6top.streamlit.app
+> **Verify offline in 60s (no key):** `pip install -r requirements.txt && python evals/run_evals.py` → **51/51**, `pytest tests/` → **43/43**
+> **New here? Read `JUDGES_READ.md` first** — it maps every requirement to a feature and the test that proves it.
+
+Steel plants run on tightly-coupled, capital-intensive equipment where a
+single unplanned stop cascades into lost production, safety risk and
+emergency spend. The knowledge to prevent it already exists, but it is
+scattered across manuals, SOPs, sensor logs, failure reports and the memory
+of whoever is on shift. VULCAN pulls that together into one trustworthy
+decision-support agent for maintenance engineers.
+
+It is a genuine **LLM orchestrator agent**, not a chatbot over a manual. An
+812-line behavioral system prompt governs the reasoning; the agent plans
+which of its **real tools** to call per query — RAG retrieval over
 manuals/SOPs/history, a layered anomaly-detection engine, FOUR RUL estimators
 (linear-drift with 80% CI, Weibull conditional, Arrhenius thermal-aging,
-P-F interval), a
-fleet-wide health scanner, delay-log Pareto analytics, a CMMS spares lookup,
-and a persistent feedback-learning store, and an autonomous sentinel that monitors the plant unattended — then synthesizes an
-evidence-traceable, confidence-calibrated answer.
+P-F interval), a fleet-wide health scanner, delay-log Pareto analytics, a
+CMMS spares lookup, and a persistent feedback-learning store — and an
+**autonomous sentinel** monitors the plant unattended, predicting failures
+before any limit is breached. It then synthesizes an evidence-traceable,
+confidence-calibrated answer.
 
 Its defining property is **epistemic honesty**: VULCAN never invents a part
 number, threshold, stock quantity, or sensor value. Missing data is named as
 an Information Gap with an acquisition plan; every claim carries an evidence
-tier and confidence band.
+tier and confidence band. In a real plant, fake confidence is what gets a
+tool vetoed — so this honesty is not a feature, it is the whole point.
 
 ## What's new in v11 — Production hardening (for a plant, not a demo)
 
@@ -223,7 +236,7 @@ and "inefficient"):
 pip install -r requirements.txt
 
 # 2. Configure — get a key at https://console.anthropic.com
-export ANTHROPIC_API_KEY=sk-ant-...        # or paste it in the app sidebar
+export ANTHROPIC_API_KEY=sk-ant-...        # or create a .env file (see .env.example), or paste it in the app sidebar
 
 # 3. Run it — this single command IS the start of autonomy (v10):
 streamlit run app.py    # monitoring daemon autostarts with the server
@@ -353,7 +366,7 @@ both retrievers return nothing rather than forced citations.
 
 ## Measured results (evaluation harness)
 
-`python evals/run_evals.py` runs 35 deterministic checks — detection
+`python evals/run_evals.py` runs 51 deterministic checks — detection
 accuracy on seeded faults, false-positive control on healthy assets, RUL
 sanity with valid confidence intervals, delay-analytics correctness,
 retrieval relevance, five fabrication-resistance probes (unknown
