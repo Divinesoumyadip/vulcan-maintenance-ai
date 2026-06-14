@@ -35,31 +35,8 @@ The chat agent and the autonomous sentinel share the exact same tested tool laye
 
 The intelligence is split deliberately into two layers, each doing what it is best at.
 
-```
-            ┌──────────────────────────────────────────────────────────┐
-  INPUTS    │  Engineer (NL query)   UI / CLI   Sensor feed   Sentinel  │
-            └───────────────┬──────────────────────────────────────────┘
-                            │
-                            ▼
-            ┌──────────────────────────────────────────────────────────┐
- BEHAVIORAL │           LLM ORCHESTRATOR AGENT                          │
-   LAYER    │  plan → call tools → observe results → synthesize         │
-            │  812-line system prompt · evidence tiers · confidence     │
-            │  bands · role-aware output · 23 constraints (never fake)  │
-            └───────────────┬──────────────────────────────────────────┘
-                            │  genuine tool calls
-                            ▼
-            ┌──────────────────────────────────────────────────────────┐
-COMPUTATION │  RAG retrieval │ anomaly engine │ 4 RUL models │ fleet    │
-   LAYER    │  scan │ delay Pareto │ prioritizer │ CMMS spares │ work   │
-            │  orders │ feedback learning store                         │
-            └───────────────┬──────────────────────────────────────────┘
-                            │
-                            ▼
-            ┌──────────────────────────────────────────────────────────┐
-   DATA     │  knowledge_base · sensor_data · spares · SQLite (WAL)     │
-            └──────────────────────────────────────────────────────────┘
-```
+<img width="1235" height="797" alt="image" src="https://github.com/user-attachments/assets/2cd8e6d1-76c6-4358-b9e5-a03f0509993a" />
+
 
 The **behavioral layer** is an 812 line system prompt that defines twelve reasoning agents (parse and plan through to logbook), a response depth ladder so the output matches the input, evidence tiers with calibrated confidence, role aware rendering for engineers, supervisors, procurement and safety, and twenty three inviolable constraints, chief among them: never fabricate a value.
 
