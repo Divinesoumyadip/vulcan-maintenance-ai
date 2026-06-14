@@ -1,0 +1,8 @@
+anthropic>=0.40
+streamlit>=1.38
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.4
+scipy>=1.11
+pypdf>=4.0
+rank-bm25>=0.2

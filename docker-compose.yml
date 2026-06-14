@@ -1,0 +1,40 @@
+# VULCAN v11 — production-shaped deployment: autonomy is its OWN service.
+# The UI is a stateless viewer; the sentinel service owns the monitoring
+# loop. They share one volume (sensor data + the SQLite WAL store), which
+# is safe for many readers + one writer on a single host. For multi-host,
+# move the store to PostgreSQL (see PRODUCTION.md §Scaling path).
+services:
+  vulcan-sentinel:                  # the autonomy engine (no UI needed)
+    build: .
+    command: python vulcan_service.py --interval 60
+    environment:
+      - VULCAN_DAEMON_AUTOSTART=0   # this process IS the daemon
+      - VULCAN_HEALTH_PORT=8799
+      - VULCAN_RETENTION_DAYS=30
+      - VULCAN_MAX_ALERTS_PER_CYCLE=25
+      # - VULCAN_WEBHOOK_URL=https://hooks.example.com/vulcan
+      # - VULCAN_WEBHOOK_SECRET=change-me
+      # - VULCAN_DAEMON_LLM=1
+      # - ANTHROPIC_API_KEY=sk-ant-...
+    ports: ["8799:8799"]            # GET /healthz → JSON metrics
+    volumes: ["vulcan-data:/app/data"]
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request;urllib.request.urlopen('http://localhost:8799/healthz')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  vulcan-ui:                        # stateless viewer + chat agent
+    build: .
+    environment:
+      - VULCAN_DAEMON_AUTOSTART=0   # the sentinel service owns autonomy
+      # - ANTHROPIC_API_KEY=sk-ant-...
+    ports: ["8501:8501"]
+    volumes: ["vulcan-data:/app/data"]
+    depends_on: [vulcan-sentinel]
+    restart: unless-stopped
+
+volumes:
+  vulcan-data:

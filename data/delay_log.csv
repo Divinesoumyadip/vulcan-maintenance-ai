@@ -1,0 +1,15 @@
+date,equipment_id,section,cause,delay_minutes
+2026-04-02,HSM-COILER-01,Rolling,wrapper roll jam,95
+2026-04-11,HSM-COILER-01,Rolling,wrapper roll jam,120
+2026-04-19,CC2-MO-01,Casting,oscillation irregularity,40
+2026-04-25,HSM-COILER-01,Rolling,wrapper roll jam,140
+2026-05-01,UTIL-HPU-03,Utilities,hydraulic pressure drop,60
+2026-05-06,HSM-COILER-01,Rolling,mandrel hydraulic leak,75
+2026-05-09,HSM-COILER-01,Rolling,wrapper roll jam,160
+2026-05-14,CC2-MO-01,Casting,oscillation irregularity,55
+2026-05-18,UTIL-HPU-03,Utilities,hydraulic pressure drop,70
+2026-05-21,HSM-COILER-01,Rolling,wrapper roll jam,180
+2026-05-27,RHF-01,Rolling,burner flame instability,45
+2026-06-01,HSM-COILER-01,Rolling,mandrel hydraulic leak,90
+2026-06-04,CC2-MO-01,Casting,oscillation irregularity,65
+2026-06-07,HSM-COILER-01,Rolling,wrapper roll jam,210

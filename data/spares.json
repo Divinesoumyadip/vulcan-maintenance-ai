@@ -1,0 +1,68 @@
+[
+  {
+    "item_id": "SP-0001",
+    "description": "Mold oscillator drive-side spherical roller bearing (heavy industrial, oscillating duty)",
+    "category": "bearing / spherical roller / oscillating service",
+    "compatible_equipment": "CC2-MO-01",
+    "on_hand_qty": 1,
+    "location": "Central Stores Rack C-14",
+    "lead_time_days": 21,
+    "supplier": "OEM-authorized distributor",
+    "data_note": "SYNTHETIC demo record \u2014 verify against live CMMS"
+  },
+  {
+    "item_id": "SP-0002",
+    "description": "Oscillator eccentric shaft coupling element set",
+    "category": "coupling / elastomeric element",
+    "compatible_equipment": "CC2-MO-01",
+    "on_hand_qty": 4,
+    "location": "Central Stores Rack C-15",
+    "lead_time_days": 10,
+    "supplier": "OEM-authorized distributor",
+    "data_note": "SYNTHETIC demo record \u2014 verify against live CMMS"
+  },
+  {
+    "item_id": "SP-0003",
+    "description": "Hydraulic servo valve, high-response, oscillation table circuit",
+    "category": "hydraulics / servo valve",
+    "compatible_equipment": "CC2-MO-01; UTIL-HPU-03",
+    "on_hand_qty": 0,
+    "location": "\u2014",
+    "lead_time_days": 45,
+    "supplier": "OEM only",
+    "data_note": "SYNTHETIC demo record \u2014 verify against live CMMS"
+  },
+  {
+    "item_id": "SP-0004",
+    "description": "Coiler wrapper roll assembly, refurbished exchange unit",
+    "category": "roll assembly / wrapper",
+    "compatible_equipment": "HSM-COILER-01",
+    "on_hand_qty": 1,
+    "location": "Mill Stores Bay 2",
+    "lead_time_days": 30,
+    "supplier": "In-house refurbishment + OEM",
+    "data_note": "SYNTHETIC demo record \u2014 verify against live CMMS"
+  },
+  {
+    "item_id": "SP-0005",
+    "description": "Synthetic gear oil ISO VG 320, oscillator gearbox grade",
+    "category": "lubricant / gear oil",
+    "compatible_equipment": "CC2-MO-01; HSM-COILER-01",
+    "on_hand_qty": 12,
+    "location": "Lube Store",
+    "lead_time_days": 5,
+    "supplier": "Approved vendor list",
+    "data_note": "SYNTHETIC demo record \u2014 verify against live CMMS"
+  },
+  {
+    "item_id": "SP-0009",
+    "description": "Ladle furnace hydraulic pump cartridge kit (high-temp seals)",
+    "category": "hydraulic / pump cartridge",
+    "compatible_equipment": "LF1-HYD-01",
+    "on_hand_qty": 0,
+    "location": "\u2014",
+    "lead_time_days": 28,
+    "supplier": "OEM only",
+    "data_note": "SYNTHETIC demo record \u2014 verify against live CMMS"
+  }
+]

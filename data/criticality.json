@@ -1,0 +1,21 @@
+{
+  "_note": "SYNTHETIC demo data \u2014 process-criticality register (1=low impact, 10=plant-stopping). In production this is owned by the reliability team / RCM study, not the AI.",
+  "assets": {
+    "CC2-MO-01": {
+      "criticality_1_10": 9,
+      "rationale": "Mold oscillator on Caster 2 \u2014 single point of failure for the casting strand; failure mid-heat risks breakout (safety + multi-shift loss)."
+    },
+    "HSM-COILER-01": {
+      "criticality_1_10": 8,
+      "rationale": "Downcoiler \u2014 hot strip mill cannot evacuate product without it; jam cascades upstream within minutes."
+    },
+    "BF3-GCP-FAN-02": {
+      "criticality_1_10": 7,
+      "rationale": "Gas cleaning plant ID fan, Blast Furnace 3 \u2014 redundancy exists (FAN-01) but at reduced furnace rate."
+    },
+    "LF1-HYD-01": {
+      "criticality_1_10": 8,
+      "rationale": "Ladle furnace main hydraulic power unit \u2014 loss stops ladle treatment; heats divert or freeze (sequence-breaking)."
+    }
+  }
+}
