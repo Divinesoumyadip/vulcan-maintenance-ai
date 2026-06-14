@@ -1,10 +1,18 @@
-# VULCAN — Agentic Maintenance Intelligence Core
+# VULCAN , Agentic Maintenance Intelligence Core   
+
 
 **Tata Steel AI Hackathon 2026 · Round 2 — Agentic AI Challenge**
 **Theme:** Maintenance Wizard for Industrial Equipment (Steel Manufacturing)
 
 > **Live demo:** https://vulcan-maintenance-ai-zzn57vptdg6gd8hbaf6top.streamlit.app
 > **Verify offline in 60 seconds (no API key needed):** `pip install -r requirements.txt && python evals/run_evals.py` → **51/51 pass**, `pytest tests/` → **43/43 pass**
+
+
+
+
+
+<img width="1280" height="525" alt="image" src="https://github.com/user-attachments/assets/0e23c856-fe89-4183-ab90-d03223cc947d" />
+
 > **For judges:** `JUDGES_READ.md` maps every requirement to the feature and the test that proves it.
 
 ---
