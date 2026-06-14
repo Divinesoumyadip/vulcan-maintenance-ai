@@ -240,3 +240,9 @@ Drive-side bearing progressive degradation in CC2-MO-01 mold oscillator; vibrati
 **Specific Confidence Boosters**:  
 1. **Bearing temperature trend** (drive-side housing, past 280 h) → would confirm thermal signature of spalling; raises confidence to **80%** if rising in parallel with vibration.  
 2. **Oil sample analysis** (fer
+
+
+---
+### Entry — 2026-06-14 18:54
+
+[AUTOPILOT] SLA BREACH — CRITICAL work order WO-20260614-0001 still OPEN after 314 min (SLA 60 min).
